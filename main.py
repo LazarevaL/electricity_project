@@ -10,6 +10,7 @@ def interpolate_nan(dataframe):
 
 st.header("Визуализация даных об электропотреблении")
 st.write("Выполнено как дополнение к проекту в рамках программы Сириус.Лето")
+st.write("*Лазарева Л., Власов А.*")
 st.markdown("""---""")
 
 uploaded_file = st.file_uploader("Выберите файл Excel", type=["xlsx", "xls"])
