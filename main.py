@@ -26,7 +26,7 @@ if uploaded_file is not None:
     st.table(df)
 
     if not df.empty:
-        st.write(f"Среднее значение потребления {df.Q1.mean()} кВт")
+        st.write(f"Среднее значение потребления {round(df.Q1.mean(), 2)} кВт")
 
         fig = px.bar(df, x=df.Hour.to_list(), y="Q1", 
                     title="График потребления")
@@ -47,8 +47,8 @@ if uploaded_file is not None:
 
         st.header("Рекомендации")
         st.markdown("""---""")
-        st.write(f"- Необходимая емкость накопителя **{df.dif[df['dif']>0].sum()}** А*ч")
-        st.write(f"- Необходимая мощность накопителя **{df.dif[df['dif']>0].max()}** кВт")
+        st.write(f"- Необходимая емкость накопителя **{round(df.dif[df['dif']>0].sum(),2)}** А*ч")
+        st.write(f"- Необходимая мощность накопителя **{round(df.dif[df['dif']>0].max(),2)}** кВт")
         st.write("- Часы зарядки накопителя")
         st.write(str(list(df.Hour[df['dif']<0])))
         st.write("- Часы разрядки накопителя")
